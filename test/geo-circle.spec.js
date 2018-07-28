@@ -169,7 +169,7 @@ describe('GeoCircle Tests', () => {
     it('#toString() Should output the GeoCircle string in the correct format', done => {
         var data = [ 
             { latlng: { lat: 52.101, lng: -100.0002 } },
-            { latlng: { lat: -34.224, lng: 98.0001 } },
+            { name: "Test", latlng: { lat: -34.224, lng: 98.0001 } },
         ]
         var d1 = data[0];
         var d2 = data[1];
@@ -177,8 +177,8 @@ describe('GeoCircle Tests', () => {
         var g2 = new GeoCircle(000000, 00000, [d2]);
         var output1 = g1.toString();
         var output2 = g2.toString();
-        should(output1).be.equal('Latitude: 52.101 | Longitude: -100.0002\n');
-        should(output2).be.equal('Latitude: -34.224 | Longitude: 98.0001\n');
+        should(output1).be.equal('Latitude: 52.10100 | Longitude: -100.00020\n');
+        should(output2).be.equal('name: Test | Latitude: -34.22400 | Longitude: 98.00010\n');
         done();
     });
 
