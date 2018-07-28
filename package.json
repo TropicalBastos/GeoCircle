@@ -1,0 +1,21 @@
+{
+  "name": "geocircle",
+  "version": "1.0.0",
+  "description": "Great Circle Distance library for calculating geo-coordinates within kilometre radiuses",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@tropicalbastos/clone-js": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "should": "^13.2.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ian Bastos",
+  "license": "ISC"
+}
