@@ -30,7 +30,7 @@ const data = [
     }
 ];
 
-var geoCircle = new GeoCircle(52.000, -33.000, data, 'coords');
+var geoCircle = new GeoCircle(52.000, -33.000, data, 'coords'); //note the use of the key 'coords'
 geoCircle.setGeoCircleWithin(100) //within 100km
 console.log(geoCircle.toString()) // name: A | Latitude: 52.00000 | Longitude: -33.50000
 ```
