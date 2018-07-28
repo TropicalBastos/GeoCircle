@@ -8,7 +8,7 @@ Installation is with npm : `npm install geocircle --save`
 
 ## Usage
 
-Firstly you'd have to create A `GeoCircle` object and pass it the correct parameters. In your array of data you need to have a `LatLng` object of anatomy `{ lat: 34.0001, lng: -33.1111 }` by default the key latlng is used but you can specify a user-defined key for example `coords` as the fourth argument to the `GeoCircle` constructor.
+To get started, create a `GeoCircle` object and pass it the correct parameters. In your array of data you need to have a `LatLng` object of anatomy `{ lat: 34.0001, lng: -33.1111 }` by default the key latlng is used but you can specify a user-defined key for example `coords` as the fourth argument to the `GeoCircle` constructor.
 
 ```javascript
 const GeoCircle = require('geocircle');
@@ -16,7 +16,7 @@ const GeoCircle = require('geocircle');
 const data = [
     {
         name: "A",
-        coords: {
+        coords: { //we'll specify the key 'coords' to target this object that holds the lat/lng
             lat: 52.000,
             lng: -33.500
         }
