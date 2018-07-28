@@ -37,6 +37,13 @@ console.log(geoCircle.toString()) // name: A | Latitude: 52.00000 | Longitude: -
 
 ## Method Reference
 
+### Public Properties (GeoCircle)
+
+| Property           | Summary                                                                                          |
+|--------------------|--------------------------------------------------------------------------------------------------|
+| SORT_ASCENDING     | The identifier for the ascending sorting order of the sort() method                              |
+| SORT_DESCENDING    | The identifier for the descending sorting order of the sort() method                             |
+
 ### Public Methods (GeoCircle)
 
 | Method             | Summary                                                                                          |
