@@ -1,6 +1,6 @@
 # Geo Circle
 
-This is a lightweight geo utility package that can extract all of the latitudes and longitude coords within an array of data within a user-defined km circle area
+This is a lightweight geo utility package that can extract all of the latitude and longitude coords within an array of data within a user-defined km circle area
 
 ## Installation
 
