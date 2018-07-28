@@ -59,17 +59,6 @@ describe('GeoCircle Tests', () => {
         done();
     });
 
-    it('#getCoordsFromCoordsString() Should return the correct latlng object from coordinates passed', done => {
-        var latlng = GeoCircle.getCoordsFromCoordsString("52.001000, -0.000010");
-        should(latlng.lat).be.equal(parseFloat(52.001));
-        should(latlng.lng).be.equal(parseFloat(-0.00001));
-
-        latlng = GeoCircle.getCoordsFromCoordsString("101.010,16.02310");
-        should(latlng.lat).be.equal(parseFloat(101.01));
-        should(latlng.lng).be.equal(parseFloat(16.0231));
-        done();
-    });
-
     it('#sort() Should correctly sort the data array in acsending|descending order', done => {
         var data = [
             {
