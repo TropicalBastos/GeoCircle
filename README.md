@@ -41,7 +41,7 @@ console.log(geoCircle.toString()) // name: A | Latitude: 52.00000 | Longitude: -
 
 | Method                    | Summary                                                                                   |
 |---------------------------|-------------------------------------------------------------------------------------------|
-| getCoordsFromCoordsString | Returns a LatLng object based on coordinates string passed e.g "-34.000,80.0444"          |
+| getCoordsFromCoordsString | Returns a LatLng object based on the coordinates string passed e.g "-34.000,80.0444"      |
 
 ### Public Methods
 
