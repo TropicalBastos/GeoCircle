@@ -2,6 +2,7 @@ require('mocha');
 var should = require('should');
 const assert = require('assert');
 const GeoCircle = require('../lib/geo-circle');
+const LatLng = require('../lib/latlng');
 
 describe('GeoCircle Tests', () => {
     
@@ -59,16 +60,11 @@ describe('GeoCircle Tests', () => {
     });
 
     it('#getCoordsFromCoordsString() Should return the correct latlng object from coordinates passed', done => {
-        var data = [
-            { latlng: { lat: 52.000, lng: -0.00001 } },
-            { latlng: { lat: 52.000, lng: -0.00001 } }
-        ];
-        var geoCircle = new GeoCircle(52.000, -0.00001, data);
-        var latlng = geoCircle.getCoordsFromCoordsString("52.001000, -0.000010");
+        var latlng = GeoCircle.getCoordsFromCoordsString("52.001000, -0.000010");
         should(latlng.lat).be.equal(parseFloat(52.001));
         should(latlng.lng).be.equal(parseFloat(-0.00001));
 
-        latlng = geoCircle.getCoordsFromCoordsString("101.010,16.02310");
+        latlng = GeoCircle.getCoordsFromCoordsString("101.010,16.02310");
         should(latlng.lat).be.equal(parseFloat(101.01));
         should(latlng.lng).be.equal(parseFloat(16.0231));
         done();
@@ -170,7 +166,7 @@ describe('GeoCircle Tests', () => {
         var data = [ 
             { latlng: { lat: 52.101, lng: -100.0002 } },
             { name: "Test", latlng: { lat: -34.224, lng: 98.0001 } },
-        ]
+        ];
         var d1 = data[0];
         var d2 = data[1];
         var g1 = new GeoCircle(000000, 00000, [d1]);
@@ -179,6 +175,36 @@ describe('GeoCircle Tests', () => {
         var output2 = g2.toString();
         should(output1).be.equal('Latitude: 52.10100 | Longitude: -100.00020\n');
         should(output2).be.equal('name: Test | Latitude: -34.22400 | Longitude: 98.00010\n');
+        done();
+    });
+
+    it('#getData() Should get GeoCircle\'s internal data', done => {
+        var data = [ 
+            { latlng: { lat: 52.101, lng: -100.0002 } },
+            { name: "Test", latlng: { lat: -34.224, lng: 98.0001 } },
+        ];
+        var geoCircle = new GeoCircle(34.0000, -130.0001, data);
+        var internalData = geoCircle.getData();
+        should(internalData[0].latlng.lat).be.equal(52.101);
+        should(internalData[0].latlng.lng).be.equal(-100.0002);
+        should(internalData[1].latlng.lat).be.equal(-34.224);
+        should(internalData[1].latlng.lng).be.equal(98.0001);
+        should(internalData[1].name).be.equal("Test");
+        done();
+    });
+
+    it('#setData() Should set GeoCircle\'s internal data', done => {
+        var data = [ 
+            { latlng: { lat: 52.101, lng: -100.0002 } },
+            { name: "Test", latlng: { lat: -34.224, lng: 98.0001 } },
+        ];
+        var geoCircle = new GeoCircle(34.0000, -130.0001, [{latlng: {lat: 0, lng: 0}}]);
+        var internalData = geoCircle.setData(data);
+        should(internalData[0].latlng.lat).be.equal(52.101);
+        should(internalData[0].latlng.lng).be.equal(-100.0002);
+        should(internalData[1].latlng.lat).be.equal(-34.224);
+        should(internalData[1].latlng.lng).be.equal(98.0001);
+        should(internalData[1].name).be.equal("Test");
         done();
     });
 
